@@ -8,48 +8,48 @@ Full-stack fintech analytics platform for monitoring loan portfolio performance,
 
 ✨ Features
 
-Portfolio at Risk (PAR) analytics
+-> Portfolio at Risk (PAR) analytics
 
-Dynamic DPD bucket classification
+-> Dynamic DPD bucket classification
 
-On-time vs Delinquent loan distribution
+-> On-time vs Delinquent loan distribution
 
-EMI-level overdue calculation
+-> EMI-level overdue calculation
 
-Drill-down loan analytics
+-> Drill-down loan analytics
 
-Date range based trend charts
+-> Date range based trend charts
 
 Multi-filter dashboard
 
 🛠 Tech Stack
 
-Backend
+-> Backend
 
-Node.js
+    Node.js
 
-Express.js
+    Express.js
 
-MongoDB Aggregation Framework
+    MongoDB Aggregation Framework
 
-Mongoose
+    Mongoose
 
-Frontend
+-> Frontend
 
-React.js
+    React.js
 
-TailwindCSS
+    TailwindCSS
 
-Axios
+    Axios
 
 📈 Dashboard Metrics
 
-Total AUM
+-> Total AUM
 
-Delinquent AUM
+-> Delinquent AUM
 
-On-time AUM
+-> On-time AUM
 
-PAR Buckets (1–180+ Days)
+-> PAR Buckets (1–180+ Days)
 
-Collection Trends
+-> Collection Trends
