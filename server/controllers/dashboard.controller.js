@@ -6,8 +6,8 @@ const loanSchema = require('../../../models/loan.model.js')
 const repaymentSchema = require('../../../models/repayment.model.js')
 const userSchema = require('../../../models/user.model.js')
 
-const { getAllLoansByMapping } = require('../../../services/getAllLoansByMapping');
-const { buildLoanMatch } = require('../../../services/buildLoanMatch');
+const { getAllLoansByMapping } = require('../../../services/loanMapping.service.js');
+const { buildLoanMatch } = require('../../../services/dashboardAggregation.service.js');
 
 router.get('/dashboard/collections', verifyToken, async (req, res) => {
   try {
