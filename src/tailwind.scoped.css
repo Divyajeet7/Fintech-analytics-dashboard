@@ -1,0 +1,6 @@
+/* IMPORTANT: scope everything */
+.tailwind-scope {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}
