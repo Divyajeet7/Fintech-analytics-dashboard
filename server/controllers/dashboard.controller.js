@@ -1,36 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('../../VerifyToken');
+const verifyToken = require('../../middleware/VerifyToken');
 
-const loanSchema = require('../../../schemafile/loandetailsschema')
-const repaymentSchema = require('../../../schemafile/repaymentsschema')
-const userSchema = require('../../../schemafile/addstaffschema')
+const loanSchema = require('../../../models/loan.model.js')
+const repaymentSchema = require('../../../models/repayment.model.js')
+const userSchema = require('../../../models/user.model.js')
 
-const { getAllLoansByMapping } = require('../../../utils/getAllLoansByMapping');
-
-function buildLoanMatch({ allowedLoanIds, filters }) {
-  const match = {
-    Loan_ID: { $in: allowedLoanIds }
-  };
-
-  if (filters.location && filters.location !== 'All Locations') {
-    match.Borrower_Branch = filters.location;
-  }
-
-  if (filters.salesPerson && filters.salesPerson !== 'All Sales People') {
-    match.Collection_agent_name = filters.salesPerson;
-  }
-
-  if (filters.lender && filters.lender !== 'All Lenders') {
-    match.NBFC_name = filters.lender;
-  }
-
-  if (filters.loanProduct && filters.loanProduct !== 'All Products') {
-    match.Product_type = filters.loanProduct;
-  }
-
-  return match;
-}
+const { getAllLoansByMapping } = require('../../../services/getAllLoansByMapping');
+const { buildLoanMatch } = require('../../../services/buildLoanMatch');
 
 router.get('/dashboard/collections', verifyToken, async (req, res) => {
   try {
